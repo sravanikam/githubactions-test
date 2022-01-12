@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: string name
-        run: echo "This is my fist pipeline"
+        run: excho "This is my fist pipeline"
       - name: Multii line script
         run: |
           node -v
