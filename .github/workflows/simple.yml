@@ -7,11 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: string name
-        run: excho "This is my fist pipeline"
+        run: echo "This is my fist pipeline"
       - name: Multii line script
         run: |
           node -v
           npm -v
+          pip -V
+          helm version --short
+          mvn -v
+          ansible --version
           ls -al
 
 
