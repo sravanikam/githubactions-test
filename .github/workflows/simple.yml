@@ -9,7 +9,7 @@ jobs:
       - name: string name
         run: |
            echo "This is my fist pipeline"
-           echo "sravani" > test.txt
+           echo "This is a file created from step1 in job1 " > test.txt
 
       - name: Multii line script
         run: |
