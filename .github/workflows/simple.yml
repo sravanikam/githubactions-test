@@ -7,9 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: string name
-        run: echo "This is my fist pipeline"
+        run: |
+           echo "This is my fist pipeline"
+           echo "sravani" > test.txt
+
       - name: Multii line script
         run: |
+          cat test.txt
           node -v
           npm -v
           pip -V
@@ -17,5 +21,11 @@ jobs:
           mvn -v
           ansible --version
           ls -al
+      - name: python command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
+
 
 
