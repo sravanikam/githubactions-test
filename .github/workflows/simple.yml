@@ -11,7 +11,7 @@ jobs:
            echo "This is my fist pipeline"
            echo "This is a file created from step1 in job1 " > test.txt
 
-      - name: Multii line script
+      - name: Multi line script
         run: |
           cat test.txt
           node -v
@@ -40,9 +40,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Simple JS Action
+        id: greet
         uses: actions/hello-world-javascript-action@main
         with:
           who-to-greet: 'Sravani Vamsi Kirti'
+      - name: Log GREETING Time
+        run: echo "${{steps.greet.outputs.time}}"
 
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
