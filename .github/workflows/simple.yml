@@ -79,12 +79,15 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
   node-version:
+    strategy:
+      matrix:
+        node-version: [ 6,8,10 ]
     runs-on: ubuntu-latest
     steps:
       - name: Log node and java versions
         run: node -v
       - uses: actions/setup-node@v2
         with:
-          node-version: 6
+          node-version: ${{ matrix.node_version}}
       - name: Node Version after the action/setup-node
         run: node -v
