@@ -86,8 +86,8 @@ jobs:
     steps:
       - name: Log node and java versions
         run: node -v
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node_version}}
+          node-version: ${{ matrix.node_version }}
       - name: Node Version after the action/setup-node
         run: node -v
