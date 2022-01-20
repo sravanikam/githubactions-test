@@ -43,10 +43,10 @@ jobs:
         run: |
           pwd
           ls -al
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "${{github.token}}"
+          echo "GITHUB_SHA " $GITHUB_SHA
+          echo "GITHUB_REPOSITORY" $GITHUB_REPOSITORY
+          echo "GITHUB_WORKSPACE " $GITHUB_WORKSPACE
+          echo " Github token " "${{github.token}}"
 #          git clone git@github:$GITHUB_REPOSITORY
 #          git checkout $GITHUB_SHA
       - name: checkout
@@ -77,3 +77,14 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+  node-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log node and java versions
+        run: node -v
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 6
+      - name: Node Version after the action/setup-node
+        run: node -v
