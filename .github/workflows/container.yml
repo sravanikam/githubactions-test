@@ -20,8 +20,8 @@ jobs:
           entrypoint: "/bin/echo"
           args: "Hello sravani"
       - uses: actions/checkout@v2
-      - name: call script
-          uses: docker://node:14-alpine3.14
-          with:
-            entrypoint: ./script.sh
-            args: "Pass something"
+      - name: Run a script
+        uses: docker://node:14-alpine3.14
+        with: 
+          entrypoint: ./scriptt.sh
+          args: "Hello Vamsi and Kirti"
